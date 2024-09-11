@@ -1,0 +1,14 @@
+# git ignore for python, fastapi, htmx, tailwindcss, and uvicorn
+
+# Python
+__pycache__/
+venv/
+
+# FastAPI
+__pycache__/
+
+# htmx
+.htmx/
+
+# TailwindCSS
+node_modules/
