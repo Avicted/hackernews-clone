@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Hacker News Clone">
+    <meta name="keywords" content="hacker news, hacker news clone, hn clone">
+    
+    <title>Hacker News Clone Login</title>
+    
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+    <link href="/static/styles.css" rel="stylesheet">
+    <link href="/static/tailwind.css" rel="stylesheet">
+    <script src="https://unpkg.com/htmx.org@1.9.4"></script>
+</head>
+<body class="bg-hn-background text-hn-text font-sans">
+    
+
+    <main class="container mx-auto p-4">
+        <div id="forms" hx-trigger="load" hx-target="#posts">
+            <form >
+                <div class="mb-4">
+                    <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+                    <input type="text" id="username" name="username" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+                </div>
+                <div class="mb-4">
+                    <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                    <input type="password" id="password" name="password" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+                </div>
+                <button type="submit" class="bg-hn-orange text-white px-4 py-2 rounded-md">Login</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="bg-hn-orange text-black py-2 text-center">
+        <p>&copy; 2024 Hacker News Clone. All rights reserved.</p>
+    </footer>
+</body>
+</html>

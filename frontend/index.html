@@ -1,31 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Hacker News Clone">
+    <meta name="keywords" content="hacker news, hacker news clone, hn clone">
+
     <title>Hacker News Clone</title>
+
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
     <link href="/static/styles.css" rel="stylesheet">
     <link href="/static/tailwind.css" rel="stylesheet">
     <script src="https://unpkg.com/htmx.org@1.9.4"></script>
 </head>
-<body class="bg-hn-background text-hn-text font-sans">
-    <header class="bg-hn-orange text-black py-4">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="/#" class="text-lg font-bold">Hacker News Clone</a>
-            <nav>
-                <a href="#" class="text-black hover:underline">Submit</a>
-            </nav>
-        </div>
-    </header>
 
-    <main class="container mx-auto p-4">
-        <div id="posts" hx-get="/posts" hx-trigger="load" hx-target="#posts">
-            <!-- Posts will be dynamically loaded here -->
-        </div>
-    </main>
+<body class="bg-white flex justify-center bg-hn-background text-hn-text w-full font-sans mt-2">
+    <div className="px-4 sm:px-6 lg:px-8" style="width: 90%; background-color: #f6f6ef;">
+        <div className="mx-auto max-w-3xl">
+            <header class="bg-hn-orange text-black p-1 w-full flex justify-center">
+                <div class="container mx-auto flex xl-w-10/12 h-8 text-center leading-7" style="line-height: 28px;">
+                    <a href="/" class="flex text-lg font-extrabold min-w-50 text-nowrap">Hacker News Clone</a>
+                    <nav class="flex justify-start w-11/12 ml-4 mr-4">
+                        <div class="flex-none">
+                            <a href="/new" class="text-black hover:underline">New</a>
+                            <span class="text-black ml-4">|</span>
+                            <a href="/past" class="text-black hover:underline ml-4">Past</a>
+                            <span class="text-black ml-4">|</span>
+                            <a href="/newcomments" class="text-black hover:underline ml-4">Comments</a>
+                            <span class="text-black ml-4">|</span>
+                            <a href="/ask" class="text-black hover:underline ml-4">Ask</a>
+                            <span class="text-black ml-4">|</span>
+                            <a href="/show" class="text-black hover:underline ml-4">Show</a>
+                            <span class="text-black ml-4">|</span>
+                            <a href="/jobs" class="text-black hover:underline ml-4">Jobs</a>
+                            <span class="text-black ml-4">|</span>
+                            <a href="/submit" class="text-black hover:underline ml-4">Submit</a>
+                        </div>
+                        <span class="text-black flex grow"></span>
 
-    <footer class="bg-hn-orange text-black py-2 text-center">
-        <p>&copy; 2024 Hacker News Clone. All rights reserved.</p>
-    </footer>
+                        <a href="/login" class="text-black hover:underline ml-4 flex">Login</a>
+                    </nav>
+
+                </div>
+            </header>
+
+            <main class="container mx-auto p-4">
+                <div id="posts" hx-get="/posts" hx-trigger="load" hx-target="#posts">
+                    <!-- Posts will be dynamically loaded here -->
+                </div>
+            </main>
+
+            <footer class="bg-hn-orange text-black py-2 text-center">
+                <p>&copy; 2024 Hacker News Clone. All rights reserved.</p>
+            </footer>
+        </div>
+    </div>
+
 </body>
+
 </html>
