@@ -1,13 +1,27 @@
 {% for post in posts %}
-<div class="bg-[#f6f6ef] text-black p-2 rounded-xs border border-lightgray">
-    <a href="{{ post.url }}" class="text-black hover:underline text-lg">{{ post.title }}</a>
-    <p class="text-sm text-gray-400">
-        <span>12 {{ post.points }} points</span> | 
-        by 
-        <span>{{ post.author }}</span> |
-        <span>1 hour ago</span>
-        <span>|</span>
-        <span>3 comments</span>
-    </p>
+<div class="flex bg-[#f6f6ef] text-black p-2 rounded-xs border border-lightgray">
+    <div class="flex flex-col mr-1">
+        <button class="text-gray-400 hover:text-black">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                stroke="currentColor" class="size-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+            </svg>
+        </button>
+    </div>
+    <div class="size-full">
+        <p class="flex justify-between min-w-full" style="line-height: 28px;">
+            <a href="{{ post.url }}" class="flex text-black hover:underline text-lg">{{ post.title }}</a>
+            <a href="{{ post.url }}" class="flex text-gray-400 hover:underline">{{ post.url }}</a>
+        </p>
+        <p class="text-sm text-gray-400">
+            <span>12 {{ post.points }} points</span> |
+            by
+            <span>{{ post.author }}</span> |
+            <span>1 hour ago</span>
+            <span>|</span>
+            <span><a href="{{ post.commentsURL }}" class="hover:text-underline hover:text-black">3 comments</a></span>
+        </p>
+    </div>
+
 </div>
 {% endfor %}
